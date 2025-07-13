@@ -8,7 +8,7 @@
           Join us to explore new places, document your adventures, and connect
           with fellow travelers.
         </p>
-        <AppSignInButton />
+        <AppAuthButton />
       </div>
     </div>
   </div>
