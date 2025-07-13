@@ -4,7 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "concurrently \"pnpm run dev:db\" \"nuxt dev\"",
+    "dev:db": "turso dev --db-file local.db",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -12,11 +16,14 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.9",
     "@nuxt/eslint": "1.5.2",
     "@nuxt/icon": "1.15.0",
     "@nuxtjs/color-mode": "3.5.2",
     "@tailwindcss/vite": "^4.1.11",
     "clsx": "^2.1.1",
+    "concurrently": "^9.2.0",
+    "drizzle-orm": "^0.44.2",
     "nuxt": "^3.17.6",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
@@ -26,11 +33,13 @@
   },
   "devDependencies": {
     "daisyui": "^5.0.46",
+    "drizzle-kit": "^0.31.4",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "lint-staged": {

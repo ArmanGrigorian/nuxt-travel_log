@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["daisyui", "Nuxt", "nuxtjs", "prefersdark", "tabler"]
+  "cSpell.words": [
+    "daisyui",
+    "esbuild",
+    "libsql",
+    "Nuxt",
+    "nuxtjs",
+    "prefersdark",
+    "tabler",
+    "TURSO"
+  ]
 }
