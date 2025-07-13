@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const authStore = useAuthStore();
+</script>
+
 <template>
   <div class="hero bg-base-300 container mx-auto mt-4">
     <div class="hero-content min-h-96 text-center">
@@ -8,7 +12,10 @@
           Join us to explore new places, document your adventures, and connect
           with fellow travelers.
         </p>
-        <AppAuthButton />
+        <AppAuthButton v-if="!authStore.user" />
+        <NuxtLink v-else to="/dashboard" class="btn btn-primary">
+          Start Logging
+        </NuxtLink>
       </div>
     </div>
   </div>
