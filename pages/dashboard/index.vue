@@ -1,3 +1,7 @@
 <template>
-  <h1>You are logged in</h1>
+  <div class="flex flex-1">
+    <SidebarContainer />
+
+    <div class="flex-1"/>
+  </div>
 </template>
