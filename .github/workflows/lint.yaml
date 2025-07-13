@@ -16,6 +16,8 @@ jobs:
       TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
       BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }},
       BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }},
+      GHUB_CLIENT_ID: ${{ secrets.GHUB_CLIENT_ID }},
+      GHUB_CLIENT_SECRET: ${{ secrets.GHUB_CLIENT_SECRET }},
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
