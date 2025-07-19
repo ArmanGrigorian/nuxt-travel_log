@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   className?: string;
 }>();
 </script>
 
 <template>
-  <span :class="cn('loading loading-bars loading-md', className)" />
+  <span :class="cn('loading loading-bars loading-md', props.className)" />
 </template>
