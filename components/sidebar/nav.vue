@@ -2,7 +2,10 @@
   <nav class="flex flex-1 flex-col">
     <ul class="flex flex-1 flex-col">
       <li>
-        <SidebarButton label="Locations" icon="tabler:map" href="/dashboard" />
+        <SidebarButton
+label="Locations"
+icon="tabler:map"
+href="/dashboard" />
       </li>
       <li class="flex-1">
         <SidebarButton

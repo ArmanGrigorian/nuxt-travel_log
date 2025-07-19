@@ -12,7 +12,7 @@ const EnvSchema = z.object({
   GHUB_CLIENT_SECRET: z.string(),
 });
 
-export type EnvSchema = z.infer<typeof EnvSchema>;
+export type T_EnvSchema = z.infer<typeof EnvSchema>;
 
 tryParseEnv(EnvSchema, process.env);
 

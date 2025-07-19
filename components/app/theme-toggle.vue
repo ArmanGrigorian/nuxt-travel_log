@@ -15,8 +15,14 @@
   <label class="swap swap-rotate mx-4">
     <input v-model="isDark" type="checkbox" >
 
-    <Icon class="swap-on" name="tabler:sun" size="24"/>
+    <Icon
+class="swap-on"
+name="tabler:sun"
+size="24"/>
 
-    <Icon class="swap-off" name="tabler:moon-filled" size="24"/>
+    <Icon
+class="swap-off"
+name="tabler:moon-filled"
+size="24"/>
   </label>
 </template>
