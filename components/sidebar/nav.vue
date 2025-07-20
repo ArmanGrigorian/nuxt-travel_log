@@ -1,21 +1,20 @@
+<script lang="ts" setup>
+const sidebarStore = useSidebarStore();
+</script>
+
 <template>
   <nav class="flex flex-1 flex-col">
-    <ul class="flex flex-1 flex-col">
-      <li>
-        <SidebarButton
-label="Locations"
-icon="tabler:map"
-href="/dashboard" />
-      </li>
-      <li class="flex-1">
-        <SidebarButton
-          label="Add Location"
-          icon="tabler:square-plus"
-          href="/dashboard/add"
-        />
-      </li>
-      <li class="divider"/>
-      <li class="pb-5">
+    <ul class="flex flex-1 flex-col gap-1">
+      <SidebarStaticItems />
+
+      <AppDivider is="li" />
+
+      <SidebarDynamicItems v-if="sidebarStore.dynamicSidebarItems.length" />
+      <li v-else class="flex-1"/>
+
+      <AppDivider is="li" />
+      
+      <li class="pb-2">
         <SidebarButton
           label="Sign Out"
           icon="tabler:logout-2"
