@@ -10,7 +10,7 @@ href="/dashboard" />
       <li class="flex-1">
         <SidebarButton
           label="Add Location"
-          icon="tabler:plus"
+          icon="tabler:square-plus"
           href="/dashboard/add"
         />
       </li>

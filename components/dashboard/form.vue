@@ -62,7 +62,7 @@ class="btn btn-primary">
         <AppLoadingSpinner v-if="isLoading" class-name="loading-sm" />
         <Icon
 v-else
-name="tabler:plus"
+name="tabler:square-plus"
 size="24" />
       </button>
     </div>

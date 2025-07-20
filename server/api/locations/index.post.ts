@@ -1,4 +1,4 @@
-import type {DrizzleError} from "drizzle-orm";
+import type { DrizzleError } from "drizzle-orm";
 import { customAlphabet } from "nanoid";
 import slugify from "slug";
 import {
@@ -7,21 +7,12 @@ import {
   insertLocation,
 } from "~/lib/db/queries";
 import { InsertLocation } from "~/lib/db/schema";
+import defineAuthenticatedEventHandler from "~/utils/define-authenticated-event-handler";
 
 const nanoid = customAlphabet("1234567890abcdefghijklmnopqrstuvwxyz", 12);
 
-export default defineEventHandler(async (event) => {
+export default defineAuthenticatedEventHandler(async (event) => {
   const user = event.context.user;
-
-  if (!user) {
-    return sendError(
-      event,
-      createError({
-        statusCode: 401,
-        statusMessage: "Unauthorized",
-      }),
-    );
-  }
 
   const result = await readValidatedBody(event, (body) =>
     InsertLocation.safeParse(body),
