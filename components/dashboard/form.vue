@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-const router = useRouter();
 const { onSubmit, onRedirect, errors, formErrors, isLoading } =
   useAddLocationForm();
+
+const router = useRouter();
 
 onBeforeRouteLeave(() => {
   return onRedirect();
 });
 </script>
-
 <template>
   <DashboardErrorMessage :error-message="formErrors" />
 
