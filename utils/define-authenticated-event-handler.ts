@@ -1,5 +1,5 @@
 import type { H3Event, H3EventContext } from "h3";
-import type { T_UserWithId } from "~/lib/types";
+import type { T_UserWithId } from "~/types/db";
 
 type T_AuthenticatedEvent = H3Event & {
   context: H3EventContext & {

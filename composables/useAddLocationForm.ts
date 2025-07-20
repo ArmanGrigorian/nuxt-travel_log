@@ -1,7 +1,6 @@
 import { InsertLocation } from "~/lib/db/schema/location";
 import { useLocationApi } from "../api/location/useLocationApi";
 
-
 export const useAddLocationForm = () => {
   const { addLocation, isLoading } = useLocationApi();
   const { handleSubmit, errors, meta, setErrors } = useForm({
@@ -9,7 +8,7 @@ export const useAddLocationForm = () => {
   });
 
   const formErrors = ref("");
-  const isSubmitted =  ref(false);
+  const isSubmitted = ref(false);
 
   const onSubmit = handleSubmit(async (values) => {
     formErrors.value = "";
@@ -19,10 +18,10 @@ export const useAddLocationForm = () => {
       formErrors.value = result.error;
     } else {
       formErrors.value = "";
-      isSubmitted.value = true
-      navigateTo("/dashboard")
+      isSubmitted.value = true;
+      await useLocationsStore().fetchLocations();
+      navigateTo("/dashboard");
     }
-
   });
 
   const onRedirect = () => {

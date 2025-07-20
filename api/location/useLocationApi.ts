@@ -1,7 +1,6 @@
 import type { FetchError } from "ofetch";
 import type { z } from "zod";
 import type { InsertLocation } from "~/lib/db/schema/location";
-const { $csrfFetch } = useNuxtApp();
 
 interface AddLocationResponse {
   data?: unknown;
@@ -9,6 +8,7 @@ interface AddLocationResponse {
 }
 
 export const useLocationApi = () => {
+  const { $csrfFetch } = useNuxtApp();
   const isLoading = ref(false);
 
   const addLocation = async (
