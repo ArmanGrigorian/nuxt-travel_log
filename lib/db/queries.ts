@@ -2,6 +2,12 @@ import { and, eq } from "drizzle-orm";
 import db from "./index";
 import { location } from "./schema/location";
 
+export async function findLocations(userId: number) {
+  return db.query.location.findMany({
+    where: eq(location.userId, userId),
+  });
+}
+
 export async function findLocationByNameAndUser(name: string, userId: number) {
   return db.query.location.findFirst({
     where: and(eq(location.name, name), eq(location.userId, userId)),
