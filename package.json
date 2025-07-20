@@ -29,9 +29,11 @@
     "concurrently": "^9.2.0",
     "drizzle-orm": "^0.44.3",
     "drizzle-zod": "^0.8.2",
+    "nanoid": "^5.1.5",
     "nuxt": "^3.17.7",
     "nuxt-csurf": "1.6.5",
     "pinia": "^3.0.3",
+    "slug": "^11.0.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
     "vee-validate": "^4.15.1",
@@ -40,6 +42,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@types/slug": "^5.0.9",
     "daisyui": "^5.0.46",
     "drizzle-kit": "^0.31.4",
     "eslint-plugin-format": "^1.0.1",

@@ -19,7 +19,7 @@ export const useLocationApi = () => {
 
     try {
       const response = await $csrfFetch("/api/locations", {
-        method: "POST",
+        method: "post",
         body: values,
         headers: {
           "content-type": "application/json",

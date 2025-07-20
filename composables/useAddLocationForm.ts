@@ -1,5 +1,6 @@
 import { InsertLocation } from "~/lib/db/schema/location";
-import { useLocationApi } from "./api/useLocationApi";
+import { useLocationApi } from "../api/location/useLocationApi";
+
 
 export const useAddLocationForm = () => {
   const { addLocation, isLoading } = useLocationApi();
@@ -19,9 +20,9 @@ export const useAddLocationForm = () => {
     } else {
       formErrors.value = "";
       isSubmitted.value = true
+      navigateTo("/dashboard")
     }
 
-    navigateTo("/dashboard")
   });
 
   const onRedirect = () => {
