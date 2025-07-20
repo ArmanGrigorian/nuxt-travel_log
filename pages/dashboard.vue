@@ -8,8 +8,11 @@ await locationsStore.fetchLocations();
   <div class="flex flex-1">
     <SidebarContainer />
 
-    <div class="flex-1">
+    <div class="flex flex-1 flex-col">
       <NuxtPage />
+      <div class="flex-1 p-4 pt-2">
+        <AppMap />
+      </div>
     </div>
   </div>
 </template>
